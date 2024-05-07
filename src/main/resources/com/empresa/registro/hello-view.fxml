@@ -1,16 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.empresa.registro.HelloController">
-  <padding>
-    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-  </padding>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
 
-  <Label fx:id="welcomeText"/>
-  <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<?import javafx.geometry.Insets?>
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.empresa.registro.UserController">
+  <padding>
+    <Insets bottom="25" left="25" right="25" top="25"/>
+  </padding>
+  <children>
+    <Label text="Correo:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+    <TextField fx:id="emailField" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+    <Label text="Contraseña:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+    <Label text="Confirmar contraseña:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+    <PasswordField fx:id="confirmPasswordField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+    <Label text="Fecha de alta:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+    <DatePicker fx:id="datePicker" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+    <CheckBox fx:id="privacyCheckBox" text="Acepto la política de privacidad" GridPane.columnIndex="0" GridPane.rowIndex="4" GridPane.columnSpan="2"/>
+    <Button text="Registrarse" onAction="#registerUser" GridPane.columnIndex="0" GridPane.rowIndex="5" GridPane.columnSpan="2"/>
+    <Label fx:id="registrationMessage" GridPane.columnIndex="0" GridPane.rowIndex="6" GridPane.columnSpan="2"/>
+  </children>
+</GridPane>
